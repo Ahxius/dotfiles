@@ -6,14 +6,14 @@
 	"modules-center": ["clock"],
 	"modules-right": ["cpu", "memory", "network", "pulseaudio", "battery"],
 
-	"hyprland/worksplaces": {
+	"hyprland/workspaces": {
 		"format": "{id}"
 	},
 
 	"clock": {
+		"interval": 60,
 		"format": "{:%H:%M}",
-		"format-alt": "{:%Y-%m-%d}",
-		"tooltip-format": "{:%Y-%m-%d | %H%:M:%S}"
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 
 	"cpu": {
@@ -21,33 +21,45 @@
 	},
 
 	"memory": {
-		"format": "RAM: {}%"
+		"format": "RAM: {}%",
+		"tooltip-format": "{used:0.1f}GiB Used"
 	},
 
 	"network": {
-		"format-wifi": " {essid}",
-		"format-ethernet": " Connected",
-		"format-disconnected": " Disconnected"
+		"format-wifi": "󰖩 {essid}",
+		"format-ethernet": "󰈀 Connected",
+		"format-disconnected": "󰖪 Disconnected"
 	},
 
 	"pulseaudio": {
-		"format": "{icon} {volume}%",
-		"format-icons": ["", "", ""]
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"phone-muted": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "pavucontrol",
+		"ignored-sinks": ["Easy Effects Sink"]
 	},
 
-	"battery#combined": {
+	"battery": {
 		"bat": "BAT0",
-		"adapter": "AC",
 		"interval": 60,
-		"format": "{icon} {capacity%}",
-		"format-charging":" {capacity}%",
-		"format-plugged": " {capacity}%",
-		"format-full": " {capacity}%",
-		"format-icons": ["", "", "", "", ""],
 		"states": {
 			"warning": 30,
 			"critical": 15
-		}
+		},
+		"format": "{capacity}% {icon}",
+		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽"],
+		"max-length": 25
 	}
 }
 

@@ -1,22 +1,46 @@
 * {
-	font-family: monospace;
-	font-size: 14px;
+    font-family: sans-serif, "Symbols Nerd Font Mono", "Font Awesome 7 Free Solid";
+    font-size: 14px;
 }
 
 window#waybar {
-	background-color: rgba(43,48,59,0.9);
-	color: #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#memory,
+#cpu,
+#battery,
+#network,
+#pulseaudio,
+#clock {
+    font-family: monospace, "Symbols Nerd Font Mono";
+    background-color: rgba(43, 48, 59, 0.9);
+    border-radius: 20px;
+    padding: 4px 16px;
+    margin: 4px 6px;
+}
+
+#workspaces {
+    background-color: rgba(43, 48, 59, 0.9);
+    border-radius: 20px;
+    padding: 4px 16px;
+    margin: 4px 6px;
 }
 
 #workspaces button {
-	padding: 0 10px;
-	color: #ffffff;
+    padding: 0 10px;
+    color: #ffffff;
+    border-radius: 15px;
+    background-color: transparent;
+    transition: all 0.3s ease;
 }
 
 #workspaces button.active {
-	background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-#clock, #cpu, #memory, #network, #pulseaudio, #battery {
-	padding: 0 10px;
+#clock {
+    font-weight: bold;
 }
+
